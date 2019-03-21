@@ -7,8 +7,7 @@ var charactersArray = [
     counterAttackPower: 2,
     isPlayerOne: false,
     isPlayerTwo: false,
-    //image: 'assets/images/mario.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'mario.png',
 }, 
 {
     name: "Kirby",
@@ -18,8 +17,7 @@ var charactersArray = [
     counterAttackPower: 5,
     isPlayerOne: false,
     isPlayerTwo: false,
-    //image: 'assets/images/kirby.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'kirby.png',
 },
 {
     name: "Donkey Kong",
@@ -29,9 +27,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
- //   image: 'assets/images/donkeykong.png',
-    image: 'http://lorempixel.com/50/50',
-},
+    img: 'donkeykong.png',
 {
     name: "Link",
     healthPoints: 150,
@@ -40,8 +36,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/link.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'link.png',
 },
 {
     name: "Ness",
@@ -51,8 +46,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-   // image: 'assets/images/ness.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'ness.png',
 },
 {
     name: "Samus Aran",
@@ -62,8 +56,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/samus.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'samusaran.png',
 },
 {
     name: "Fox McCloud",
@@ -73,8 +66,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
- //   image: 'assets/images/fox.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'fox.png',
 },
 {
     name: "Zelda",
@@ -84,8 +76,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/captainfalcon.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'zelda.png',
 },
 {
     name: "Pikachu",
@@ -95,8 +86,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/captainfalcon.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'pikachu.png',
 },
 {
     name: "Princess Peach",
@@ -106,8 +96,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/captainfalcon.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'peach.png',
 },
 {
     name: "King Dedede",
@@ -117,8 +106,7 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/captainfalcon.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'kingdedede.png',
 },
 {
     name: "Captain Falcon",
@@ -128,30 +116,27 @@ var charactersArray = [
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/captainfalcon.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'falcon.png',
 },
 {
-    name: "Captain Falcon",
+    name: "Jigglypuff",
     healthPoints: 150,
     initialAttackPower: 2,	
     attackPower: 2,
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/captainfalcon.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'jigglypuff.png',
 },
 {
-    name: "Captain Falcon",
+    name: "Luigi",
     healthPoints: 150,
     initialAttackPower: 2,	
     attackPower: 2,
     counterAttackPower: 20,
     isPlayerOne: false,
     isPlayerTwo: false,
-  //  image: 'assets/images/captainfalcon.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'luigi.png',
 },
 {
     name: "Yoshi",
@@ -161,8 +146,7 @@ var charactersArray = [
     counterAttackPower: 25,
     isPlayerOne: false,
     isPlayerTwo: false,
- //   image: 'assets/images/yoshi.png',
-    image: 'http://lorempixel.com/50/50',
+    img: 'yoshi.png',
 }];
 
 var player;
@@ -172,24 +156,49 @@ playerTwoSelected = false;
 gameStart = false;
 var enemiesRemaining = charactersArray.length - 1;
 
-function preGame() {
-    if (gameStart = false) {
-        for(var i = 0; i < charactersArray.length; i++) {
-            var characterPictureSrc = charactersArray[i].image;
-            $('img').attr('src', characterPictureSrc);
-        //    $('#player').attr('src', characterPicture);
-            $('#characterChoicesContainer').append($('<img>', ));
-        };
-    }
+function characterDisplay() {
+    $.each(charactersArray, function (index, value) {
+        var $characterName = $('<p>').addClass('name text-center')
+            .html(charactersArray[index].name);
+
+        var $characterImg = $('<img>').addClass('img-character')
+            .attr('src', 'assets/images/' + charactersArray[index].img);
+
+        var $characterHP = $('<p>').addClass('hp text-center')
+            .html('Health: ' + charactersArray[index].healthPoints);
+
+        var $newCharacter = $('<div>').addClass('character')
+            .attr('data-id', index)
+            .append($characterName)
+            .append($characterImg)
+            .append($characterHP)
+            .one('click', newPlayerSelection);
+
+        $('#character-select').append($newCharacter);
+
+    })
 };
+
+function newPlayerSelection(event) {}
+
+// function preGame() {
+//     if (gameStart = false) {
+//         for(var i = 0; i < charactersArray.length; i++) {
+//             var characterPictureSrc = charactersArray[i].img;
+//             $('img').attr('src', characterPictureSrc);
+//         //    $('#player').attr('src', characterPicture);
+//             $('#characterChoicesContainer').append($('<img>', ));
+//         };
+//     }
+// };
      //   var characterChoices = document.querySelector('#characterChoicesContainer');
 
 
 
     //    $('characters').each(function() {
-        //    $('#characterChoicesContainer').append($('<img />')'<div><img src="$('characters.image)"></div>');
+        //    $('#characterChoicesContainer').append($('<img />')'<div><img src="$('characters.img)"></div>');
 
-     //       $('<img /'>).attr('src', $('characters.image')).appendTo($('#characterChoicesContainer'));
+     //       $('<img /'>).attr('src', $('characters.img')).appendTo($('#characterChoicesContainer'));
 
     //    }
       
