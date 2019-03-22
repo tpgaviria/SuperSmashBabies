@@ -6,25 +6,42 @@ body {
 
 }
 
+#logo {
+    width:100%;
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+
+
 #char-disp {
     background-color: rgba(255, 255, 255, 0);
     height: 50%;
-    width: 760px;
+    width: 870px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .char-box {
-    border: solid black 2px;
+    border: solid #ffffff 6px;
+    border-radius: 25px;
     height: 150px;
     width: 150px;
     display: inline-block;
     z-index: 3;
     size:100%;
     position: relative;
-    margin: -1px;
-    background-color: hsla(195, 45%, 85%, 0.794);
+    margin: 5px;
+    background-color: hsla(194, 47%, 73%, 0.87);
 
+}
+
+.char-box:hover {
+    background-color: hsla(128, 55%, 64%, 0.87);
+}
+
+.char-box:active {
+    background-color: hsla(128, 61%, 56%, 0.972)
 }
 
 .char-img {
@@ -38,16 +55,26 @@ body {
 
 p.name {
     margin-top: 2px;
-    margin-left: 2px;
+    margin-left: 4px;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-p.char-stats {
+div.char-stats {
     position: absolute;
-    bottom: 2px;
-    margin-bottom: 0px;
+    width:100%;
     font-family: Arial, Helvetica, sans-serif;
-    right: 3px;
     bottom: 0px;
+    text-align: right;
     font-size: 9pt;
+    font-weight: bold;
+    color: white;
+    height: 20px;
+    border-radius: 0px 0px 17px 17px;
+    background-color: hsla(17, 100%, 39%, 0.822);
+}
+
+#stats-text {
+    margin-top: 3px;
+    margin-right: 8px;
 }

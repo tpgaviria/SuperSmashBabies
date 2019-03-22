@@ -36,7 +36,7 @@ $(document).ready(function () {
             
             var charImg = $('<img src="assets/images/' + charArray[i].img + '">').addClass('char-img');
 
-            var charStats = $('<p>HP: ' + charArray[i].hp + ' / Power: ' + charArray[i].ap + '</p>').addClass('char-stats');
+            var charStats = $('<div><p id="stats-text">HP: ' + charArray[i].hp + ' / Power: ' + charArray[i].ap + '</p></div>').addClass('char-stats');
            
             var charBox = $('<div>').addClass('char-box')
                 .append(charName)
@@ -52,18 +52,17 @@ $(document).ready(function () {
 
 
     function playerChoice(event) {
-        player = charArray[$(this).attr('data-id')];
+        player = charArray[i].name;
 
-        $(this).appendTo('#player-character')
-        .addClass('player');
 
+        
         $('#characters-select').children()
             .appendTo('#enemy-select')
             .addClass('enemy')
             .one('click', cpuSelect);
     };
 
-
+console.log(player);
 
 
 characterDisplay();
