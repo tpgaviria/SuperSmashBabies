@@ -1,0 +1,53 @@
+body {
+    background-color: ;
+    background: url(../images/background.png);
+    background-position: center bottom;
+    background-attachment: fixed;
+
+}
+
+#char-disp {
+    background-color: rgba(255, 255, 255, 0);
+    height: 50%;
+    width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.char-box {
+    border: solid black 2px;
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    z-index: 3;
+    size:100%;
+    position: relative;
+    margin: -1px;
+    background-color: hsla(195, 45%, 85%, 0.794);
+
+}
+
+.char-img {
+    z-index: 0;
+    position: absolute;
+    top: 10px;
+    height: 90%;
+    display: block;
+    
+}
+
+p.name {
+    margin-top: 2px;
+    margin-left: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p.char-stats {
+    position: absolute;
+    bottom: 2px;
+    margin-bottom: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    right: 3px;
+    bottom: 0px;
+    font-size: 9pt;
+}
