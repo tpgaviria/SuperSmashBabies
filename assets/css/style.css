@@ -44,20 +44,51 @@ body {
     background-color: hsla(128, 61%, 56%, 0.972)
 }
 
+.selected {
+    background-color: hsl(128, 61%, 56%)
+}
+
+.selected:hover {
+    background-color: hsl(128, 61%, 56%)
+}
+
+.not-selected:hover {
+    background-color: hsla(0, 55%, 64%, 0.87)
+}
+
+.not-selected:active {
+    background-color: hsl(0, 55%, 64%)
+}
+
+.selected-cpu {
+    background-color: hsl(0, 55%, 64%)
+}
+
+.selected-cpu:hover {
+    background-color: hsl(0, 55%, 64%)
+}
+
 .char-img {
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     top: 10px;
     height: 90%;
     display: block;
     
 }
-
-p.name {
-    margin-top: 2px;
-    margin-left: 4px;
+div.name {
+    margin-top: 0px;
+    margin-left: 8px;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 3px 3px 4px #000000;
+    font-family: 'Baloo', cursive;
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+#name-text {
+    margin-top: 0px;
 }
 
 div.char-stats {
@@ -76,5 +107,18 @@ div.char-stats {
 
 #stats-text {
     margin-top: 3px;
-    margin-right: 8px;
+    margin-right: 10px;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-size: 7pt;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#console p {
+    font-size: 50pt;
+    text-align: center;
+    color: white;        
+    text-shadow: 3px 3px 4px #000000;
+    font-family: 'Baloo', cursive;
+    margin-top: 25px;
+
 }
