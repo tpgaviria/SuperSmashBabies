@@ -111,10 +111,20 @@ div.char-stats {
     font-family: 'Sawarabi Gothic', sans-serif;
     font-size: 7pt;
     text-shadow: 2px 2px 4px #000000;
+    color: white;
+}
+
+#player-stats, #cpu-stats {
+    color: white;
+    text-shadow: 3px 3px 4px #000000;
+    font-family: 'Baloo', cursive;
+    letter-spacing: 1px;
 }
 
 #console p {
     font-size: 50pt;
+    margin-bottom: 0px;
+    line-height: 55px;
     text-align: center;
     color: white;        
     text-shadow: 3px 3px 4px #000000;
