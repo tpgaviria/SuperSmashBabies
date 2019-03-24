@@ -134,41 +134,37 @@ function chooseCPU(event) {
 
 function countdown() {
 
-    $('#console').html('<p>Ready in 3</p>');
-
-    setTimeout(function () {
-        $('#console').html('<p>Ready in 3...</p>');
-    }, 600);
+    $('#console').html('<p>Ready in 3...</p>');
 
     setTimeout(function () {
         $('#console').html('<p>Ready in 3... 2...</p>');
-    }, 1400);
+    }, 700);
 
     setTimeout(function () {
         $('#console').html('<p>Ready in 3... 2... 1...</p>');
+    }, 1400);
+
+    setTimeout(function () {
+        $('#console').html('<p>FIGHT!</p>');
+    }, 2100);
+
+    setTimeout(function () {
+        $('#console').html('<p></p>');
     }, 2200);
 
     setTimeout(function () {
         $('#console').html('<p>FIGHT!</p>');
+    }, 2300);
+
+    setTimeout(function () {
+        $('#console').html('<p></p>');
     }, 2400);
 
     setTimeout(function () {
-        $('#console').html('<p></p>');
+        $('#console').html('<p>FIGHT!</p>');
     }, 2500);
 
-    setTimeout(function () {
-        $('#console').html('<p>FIGHT!</p>');
-    }, 2600);
-
-    setTimeout(function () {
-        $('#console').html('<p></p>');
-    }, 2700);
-
-    setTimeout(function () {
-        $('#console').html('<p>FIGHT!</p>');
-    }, 2800);
-
-    setTimeout('battle()', 4000);
+    setTimeout('battle()', 3500);
 
 };
 
@@ -184,18 +180,20 @@ function battle() {
 
     $('#console').html('<p>Click Attack Button!</p>');
 
-    actionDiv = $('<div>')
-        .addClass('action-div')
+ 
 
     attackButton = $('<button>')
         .addClass('attack-button')
         .text('ATTACK!')
         .on('click', attack);
 
+        actionDiv = $('<div>')
+        .addClass('action-div')
+        .append(attackButton);
+
     $('#field').append(playerDiv)
-        .append(actionDiv)
-        .append(attackButton)
-        .append(cpuDiv);
+        .append(cpuDiv)
+        .append(actionDiv);
 
 };
 
