@@ -141,16 +141,8 @@ function countdown() {
     }, 600);
 
     setTimeout(function () {
-        $('#console').html('<p>Ready in 3... 2</p>');
-    }, 800);
-
-    setTimeout(function () {
         $('#console').html('<p>Ready in 3... 2...</p>');
     }, 1400);
-
-    setTimeout(function () {
-        $('#console').html('<p>Ready in 3... 2... 1</p>');
-    }, 1600);
 
     setTimeout(function () {
         $('#console').html('<p>Ready in 3... 2... 1...</p>');
@@ -249,36 +241,13 @@ function win() {
     }
 
     else if (wins === 4) {
-        $('#console').html('<p>You defeated 5 Smash Babies!<br>You win!!!</p><br><center><img src="assets/images/trophy.png" width="500px"></center>');
+        $('#console').html('<p>You defeated 4 Smash Babies!<br>You win!!!</p><br><center><img src="assets/images/trophy.png" width="500px"></center>');
         $('#field').css("display", "none");
 
     }
 
 };
 
-// function newCpu (event) {
-
-//     cpu = $(this).attr('data-id');
-
-//     $(this).addClass('selected-cpu');
-
-//     $('#char-disp').children()
-//         .unbind('click', chooseCPU);
-
-//     cpuImage = $('<img src="assets/images/' + charArray[cpu].img + '">')
-//         .addClass('cpu-img');
-
-//     cpuStats = $('<div><p id="cpu-stats">HP: ' + charArray[cpu].hp + ' / Counter Attack: ' + charArray[cpu].cap + '</p></div>');
-
-//     cpuDiv = $('<div>').addClass('cpu-div')
-//         .append(cpuImage)
-//         .append(cpuStats);
-
-//     console.log(cpu);
-
-//     countdown();
-
-// };
 
 function lose() {
 
