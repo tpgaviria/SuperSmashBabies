@@ -41,6 +41,7 @@ var charName;
 var charImg;
 var charStats;
 var charBox;
+var playersDiv;
 
 //display characters to choose from - data pulled from array
 function characterDisplay() {
@@ -187,13 +188,21 @@ function battle() {
         .text('ATTACK!')
         .on('click', attack);
 
-        actionDiv = $('<div>')
-        .addClass('action-div')
-        .append(attackButton);
+        playersDiv = $('<div>')
+        .addClass('players-div')
+        .append(playerDiv);
 
-    $('#field').append(playerDiv)
-        .append(cpuDiv)
-        .append(actionDiv);
+        playersDiv.append(cpuDiv);
+
+        actionDiv = $('<div>')
+        .addClass('action-div');
+        
+        
+        
+        $('#field').append(playersDiv)
+        .append(actionDiv)
+        .prepend(attackButton);
+
 
 };
 
