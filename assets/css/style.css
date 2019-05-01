@@ -199,9 +199,10 @@ div.cpu-div {
     width: 200px;
     text-decoration: none;
     text-shadow: 1px 1px 0px #ffee66;
-    margin-left: -10px;
-    margin-right: -10px;
-}
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: relative;
+   }
 
 .attack-button:hover {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff6600), color-stop(1, #ffec64));
